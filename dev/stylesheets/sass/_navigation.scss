@@ -1,0 +1,37 @@
+// ---------------------------------------
+// main nav
+// ---------------------------------------
+nav#site-navigation.main-navigation{
+
+}
+
+.menu-maincategory-container{
+   ul#primary-menu{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      background: darkgray;
+      max-width: 960px;
+      margin: auto;
+      li{
+         a{
+            color: white;
+            padding: 1em;
+         }
+      }
+      li:hover{
+         a{
+            color: $foundblue;
+         }
+      }
+      li.current-menu-item{
+         a{
+            color: $graydark;
+         }
+      }
+   }
+}
+
+// ---------------------------------------
+// mobil nav
+// ---------------------------------------
