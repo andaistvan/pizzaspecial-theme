@@ -26,3 +26,13 @@ global $product;
 if (empty($product) || !$product->is_visible()) {
     return;
 }
+?>
+
+   <li class="product-cont"<?php post_class(); ?>>
+      <?php do_action('woocommerce_before_shop_loop_item'); ?>
+      <?php do_action('woocommerce_shop_loop_item_title'); ?>
+      <?php wc_get_template('single-product/short-description.php'); ?>
+      <div id="cart-box-small">
+         <?php do_action('woocommerce_after_shop_loop_item'); ?>
+      </div>      
+   </li>

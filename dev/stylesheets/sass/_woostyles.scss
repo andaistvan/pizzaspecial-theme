@@ -5,3 +5,79 @@
    width: 100%;
    background: rgb(180, 246, 255);
 }
+
+
+// product grid
+
+section#shop-content{
+   .main-container{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      #woowrap{
+         // display: flex;
+         // justify-content: space-between;
+         // flex-direction: column;
+         // margin: 0 auto;
+         // display: table;
+         width: 100%;
+         .woo-list-cont{
+            // background: rgba(255, 0, 0, 0.10);
+            display: flex;
+            justify-content: center;
+            ul.products{
+               border: 1px dashed red;
+               display: inline-flex;
+               flex-wrap: wrap;
+               flex-shrink: 1;
+               flex-grow: 1;
+               flex-basis: auto;
+               justify-content: center;
+               align-items: stretch;
+               max-width: 722px;
+                  li.product-cont{
+                     width: 220px;
+                     height: 220px;
+                     margin: 10px;
+                     padding: 10px;
+                     position: relative;
+                     // background: #FFFFFF;
+                     box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.07);
+                     a.button.add_to_cart_button{
+                        position: absolute;
+                        bottom: 10px;
+                        width: 198px;
+                     }
+                     a{
+                        h3{
+                           font-size: 25px;
+                        }
+                     }
+                  }
+            }
+            ul.products:before,
+            ul.products:after{
+               display: flex;
+            }
+         }
+      }
+   }
+}
+
+// single prod page
+.single-prod-content{
+   width: 100%;
+   border: 1px dashed red;
+   .prod-header{
+      background: rgba(0, 255, 0, 0.21);
+   }
+   .prod-body{
+      background: rgba(0, 0, 255, 0.21);
+
+   }
+}
+
+
+form.cart {
+   border: 1px solid yellow;
+}

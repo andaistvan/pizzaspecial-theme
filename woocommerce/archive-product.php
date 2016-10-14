@@ -59,7 +59,7 @@ get_header('shop'); ?>
       ?>
 
       <?php if (have_posts()) : ?>
-
+      <div class="flex--row-sbw fullwidth">
       <?php
          /**
           * woocommerce_before_shop_loop hook.
@@ -69,6 +69,8 @@ get_header('shop'); ?>
           */
          do_action('woocommerce_before_shop_loop');
       ?>
+      </div>
+      <div class="woo-list-cont">
 
       <?php woocommerce_product_loop_start(); ?>
 
@@ -78,17 +80,15 @@ get_header('shop'); ?>
 
       <!-- custom layout -->
       <?php
-         if (is_product_category('pizzak')) {
-             wc_get_template_part('content', 'product-pizzak');
-         }
-         if (is_product_category('premium-pizzak')) {
-             wc_get_template_part('content', 'product-pizzak');
-         }
-         if (is_product_category('vegetarianus-pizzak')) {
-             wc_get_template_part('content', 'product-pizzak');
-         } else {
-             wc_get_template_part('content', 'product');
-         }
+      if (is_product_category('pizzak')) {
+          wc_get_template_part('content', 'product-pizzak');
+      } elseif (is_product_category('premium-pizzak')) {
+          wc_get_template_part('content', 'product-pizzak');
+      } elseif (is_product_category('vegetarianus-pizzak')) {
+          wc_get_template_part('content', 'product-pizzak');
+      } else {
+          wc_get_template_part('content', 'product');
+      }
        ?>
 
       <?php endwhile; // end of the loop. ?>
@@ -110,6 +110,7 @@ get_header('shop'); ?>
 
       <?php endif; ?>
 
+      </div><!-- woo-list-cont -->
 
       <?php
         /**

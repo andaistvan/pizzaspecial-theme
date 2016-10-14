@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template for displaying all single products
+ * The Template for displaying all single products.
  *
  * This template can be overridden by copying it to yourtheme/woocommerce/single-product.php.
  *
@@ -11,49 +11,63 @@
  * the readme will list any important changes.
  *
  * @see 	    https://docs.woocommerce.com/document/template-structure/
+ *
  * @author 		WooThemes
- * @package 	WooCommerce/Templates
+ *
  * @version     1.6.4
  */
-
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly
 }
 
-get_header( 'shop' ); ?>
+get_header('shop'); ?>
+
+
+<section id="shop-content" class="fullwidth">
+   <div class="main-container bg-white">
+
 
 	<?php
-		/**
-		 * woocommerce_before_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
-		 * @hooked woocommerce_breadcrumb - 20
-		 */
-		do_action( 'woocommerce_before_main_content' );
-	?>
+        /**
+         * woocommerce_before_main_content hook.
+         *
+         * @hooked woocommerce_output_content_wrapper - 10 (outputs opening divs for the content)
+         * @hooked woocommerce_breadcrumb - 20
+         */
+        do_action('woocommerce_before_main_content');
+    ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+		<?php while (have_posts()) : the_post(); ?>
 
-			<?php wc_get_template_part( 'content', 'single-product' ); ?>
+
+          <?php
+          if (has_term('pizzak', 'product_cat')) {
+              wc_get_template_part('content', 'single-product-pizza');
+          } elseif (has_term('premium-pizzak', 'product_cat')) {
+              wc_get_template_part('content', 'single-product-pizza');
+          } elseif (has_term('vegetarianus-pizzak', 'product_cat')) {
+              wc_get_template_part('content', 'single-product-pizza');
+          } else {
+              wc_get_template_part('content', 'single-product');
+          }
+          ?>
+
+
+
 
 		<?php endwhile; // end of the loop. ?>
 
 	<?php
-		/**
-		 * woocommerce_after_main_content hook.
-		 *
-		 * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
-		 */
-		do_action( 'woocommerce_after_main_content' );
-	?>
+        /**
+         * woocommerce_after_main_content hook.
+         *
+         * @hooked woocommerce_output_content_wrapper_end - 10 (outputs closing divs for the content)
+         */
+        do_action('woocommerce_after_main_content');
+    ?>
 
-	<?php
-		/**
-		 * woocommerce_sidebar hook.
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
+</div><!-- main-container -->
+</section><!-- shop-content -->
 
-<?php get_footer( 'shop' ); ?>
+
+<?php get_footer('shop'); ?>

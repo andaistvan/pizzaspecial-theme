@@ -11,7 +11,7 @@
 
 <footer id="colophon" class="site-footer fullwidth" role="contentinfo">
    <div class="main-container">
-
+      <a href="<?php bloginfo('template_url'); ?>/dev/docs/pizza-special-aszf.pdf"><h2>ÁSZF</h2></a>
    </div>
 
 </footer><!-- #colophon -->

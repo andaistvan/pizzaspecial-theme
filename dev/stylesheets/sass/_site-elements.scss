@@ -79,6 +79,17 @@ body{
 footer#colophon.site-footer{
    height: 150px;
    .main-container{
-      background:$graydark;
+      background:black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 130px;
+      a{
+         h2{
+            font-size: 25px;
+            color: white;
+            line-height: 1.25em;
+         }
+      }
    }
 }
